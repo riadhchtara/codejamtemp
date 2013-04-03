@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Hello...</title>
+<style type="text/css">
+#mainContent {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: xx-large;
+	font-weight: bold;
+	background-color: #E3F0FB;
+	border-radius: 4px;
+	padding: 10px;
+	text-align: center;
+}
+.buttonStyle {
+	border-radius: 4px;
+	border: thin solid #F0E020;
+	padding: 5px;
+	background-color: #F8F094;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: bold;
+	color: #663300;
+	width: 75px;
+}
+
+.buttonStyle:hover {
+	border: thin solid #FFCC00;
+	background-color: #FCF9D6;
+	color: #996633;
+	cursor: pointer;
+}
+.buttonStyle:active {
+	border: thin solid #99CC00;
+	background-color: #F5FFD2;
+	color: #669900;
+	cursor: pointer;
+}
+
+</style>
+<script type="text/javascript" src="io.js"></script>
+<script type="text/javascript" src="code.js"></script>
+</head>
+
+<body onload='load();'>
+<div id="mainContent">
+
+input:<br />
+<textarea wrap="off"  id="input" cols="45" rows="15" onblur="save()">Please limit your response to 500 charancterslea 500 characters.</textarea><br />
+output:<br />
+<textarea wrap="off"  id="output" cols="45" rows="15"></textarea><br />
+<button id="clickButton" class="buttonStyle">test</button>
+</div>
+<script> 
+var myButton = document.getElementById("clickButton");
+var input = document.getElementById("input");
+var output = document.getElementById("output");
+
+myButton.addEventListener('click', test, false)
+
+function test() {
+    currentInput = input.value.split("\n");
+    main();
+    output.value = currentOutputLine;
+    
+}
+
+function save() {
+    localStorage.setItem('input', input.value);
+
+}
+
+function load(){
+    if (localStorage.getItem('input')) {
+        input.value = localStorage.getItem('input');
+    }
+
+}
+</script>
+
+</body>
+</html>
+
