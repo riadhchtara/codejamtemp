@@ -60,7 +60,7 @@ function main(){
         var s1 = "";
         for (j = 0; j<s.length; j++)
             s1 += dic[s[j]];
-          println("Case #" + (i+1) + ": " + s1);
+          println("Case #" + (i+1) + ": " + s1); // (i+1) very important
         
     
     }
